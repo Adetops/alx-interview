@@ -1,4 +1,4 @@
-#!/bin/bash/env python3
+#!/usr/bin/python3
 ''' Defines the function pascal_triangle(n) '''
 
 def pascal_triangle(n):
@@ -15,4 +15,3 @@ def pascal_triangle(n):
                 row.append(1)
             pascalTriangle.append(row)
         return pascalTriangle
-
