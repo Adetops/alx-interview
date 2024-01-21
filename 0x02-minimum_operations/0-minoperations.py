@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 
 ''' A module that returns the minimum Operations it takes to
     get to n characters.
 
     Available operations:
-        copy
+        copy all
         paste
 '''
 
@@ -19,23 +19,37 @@ def minOperations(n):
     if n <= 1:
         return min_operations
 
-    for i in range(2, n + 1):
+    while n % 2 == 0:
+            min_operations += 2
+            n //= 2
+
+    for i in range(3, int(n**0.5) + 1, 2):
         while n % i == 0:
             min_operations += i
-            n /= i
+            n //= i
+
+    if n > 2:
+        min_operations += n
 
     return min_operations
 
 
-# if __name__ == '__main__':
-#     from random import randint
-#     from time import time
+if __name__ == '__main__':
+    minOperations = __import__('0-minoperations').minOperations
 
-#     start_time = time()
+    n = 4
+    print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
 
-#     for i in range(10):
-#         n = randint(2, 100)
-#         print("Min # of operations to reach {} char: {}".
-#               format(n, minOperations(n)))
+    n = 2147483640
+    print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+    # from random import randint
+    # from time import time
 
-#     print(f'==> Program completed in {time() - start_time:.3f}s')
+    # start_time = time()
+
+    # for i in range(10):
+    #     n = randint(2, 100)
+    #     print("Min # of operations to reach {} char: {}".
+    #           format(n, minOperations(n)))
+
+    # print(f'==> Program completed in {time() - start_time:.3f}s')
