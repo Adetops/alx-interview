@@ -20,8 +20,8 @@ def minOperations(n):
         return min_operations
 
     while n % 2 == 0:
-            min_operations += 2
-            n //= 2
+        min_operations += 2
+        n //= 2
 
     for i in range(3, int(n**0.5) + 1, 2):
         while n % i == 0:
