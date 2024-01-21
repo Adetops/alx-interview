@@ -32,24 +32,3 @@ def minOperations(n):
         min_operations += n
 
     return min_operations
-
-
-if __name__ == '__main__':
-    minOperations = __import__('0-minoperations').minOperations
-
-    n = 4
-    print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-
-    n = 2147483640
-    print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-    # from random import randint
-    # from time import time
-
-    # start_time = time()
-
-    # for i in range(10):
-    #     n = randint(2, 100)
-    #     print("Min # of operations to reach {} char: {}".
-    #           format(n, minOperations(n)))
-
-    # print(f'==> Program completed in {time() - start_time:.3f}s')
